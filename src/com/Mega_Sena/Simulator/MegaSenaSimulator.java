@@ -24,6 +24,7 @@ import java.awt.event.ActionEvent;
 import java.text.ParseException;
 
 import javax.swing.JEditorPane;
+import javax.swing.JScrollPane;
 
 public class MegaSenaSimulator extends JFrame {
 
@@ -34,6 +35,7 @@ public class MegaSenaSimulator extends JFrame {
 	static String palpite;
 	private String compResult;
 	private MaskFormatter mascara;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -153,11 +155,14 @@ public class MegaSenaSimulator extends JFrame {
 		btnJogar.setBounds(12, 109, 464, 25);
 		contentPane.add(btnJogar);
 		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 146, 464, 137);
+		contentPane.add(scrollPane);
+		
 		JEditorPane dtrpnMegasenaSimulator = new JEditorPane();
+		scrollPane.setViewportView(dtrpnMegasenaSimulator);
 		dtrpnMegasenaSimulator.setContentType("text/html");
 		dtrpnMegasenaSimulator.setText("<center>Mega-Sena Simulator 2016 - Versão 1.0.0<br>\n=================================<br>\n<br>\nPara jogar, basta colocar os números que deseja em ordem crescente\ne separados por um hífen como no exemplo abaixo:<br>\n<b>01 - 02 - 19 - 39 - 45 - 60</b><br>\n<br>\nO número 00 como palpite não é válido!<br>\nNúmeros maiores que 60 não são válidos!</center>");
 		dtrpnMegasenaSimulator.setEditable(false);
-		dtrpnMegasenaSimulator.setBounds(12, 146, 464, 137);
-		contentPane.add(dtrpnMegasenaSimulator);
 	}
 }
